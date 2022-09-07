@@ -1,0 +1,22 @@
+// menggunakan tanda _ untuk mengidentifikasikan bahwa file ini untuk partial
+@mixin inline-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+      display: inline-block;
+  }
+}
+
+// mixin with argument's
+@mixin flex-box ($direction: row, $space: center){
+  display: flex;
+  justify-content: $space;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+// kekurangan mengguanakan import 
+// - variabel global memudahkan sekaligus mempersulit
+// - 

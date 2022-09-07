@@ -1,0 +1,50 @@
+// menginport mixin menggunakan 'import'
+// @import 'mixin';
+
+// menginport mixin menggunakan use
+@use 'mixin';
+
+// pemanggilan
+.header ul {
+    // jika menggunakan imprt maka menulis mixin dengan cara biasa
+    // @include inline-list();
+
+    // untuk menggunakan mixin dengan use maka kita harud mengguanakan namespace
+    @include mixin.inline-list();
+    // menambahkan style yang sudah ada 
+    li {
+        background-color: black;
+        padding: 0.7em;
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    }
+}
+
+.footer ul {
+    @include mixin.inline-list();
+    li {
+        padding: 0.4em;
+        background-color: salmon;
+        a {
+            color: white;
+        }
+    }
+}
+
+.container {
+    // seperti function argumen ditulis saat pemanggilan
+    @include mixin.flex-box(row-reverse, space-around);
+    width: 600px;
+    height: 300px;
+    background-color: #eaeaea;
+
+    .box {
+        width: 60px;
+        height: 60px;
+        background-color: #bada5b;
+        line-height: 60px;
+        text-align: center;
+    }
+}
