@@ -1,0 +1,70 @@
+// base
+$warna-dasar: salmon;
+.satu, .dua, .tiga {
+  color: $warna-dasar;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 3em;
+  text-align: center;
+}
+
+// Build-in Function
+// ajust-color()
+
+/*
+adjust-color($color: #000000, $red: 1, $green: 2, $blue: 3, $hue: 0, $saturation: 0%, $lightness: 0%, $alpha: 1.0);
+*/
+
+.satu {
+  color: adjust-color($color: $warna-dasar, $green: 100, $blue: 100, $red: -10);
+}
+
+// ajust-hue($color, $degree)
+.dua {
+  color: adjust-hue($color: $warna-dasar, $degrees: 90deg);
+}
+
+// complement($color)
+// warna yang bersebrangan 
+.tiga {
+  color: complement($color: $warna-dasar);
+}
+
+// darken($color, $amount)
+.satu {
+  color: darken($color: $warna-dasar, $amount: 50%);
+}
+
+// lighten ($color, $amount)
+.satu {
+  color: lighten($color: $warna-dasar, $amount: 10%);
+}
+
+// saturate ($color, $amount) (pemurnian warna)
+.satu {
+  color: saturate($color: $warna-dasar, $amount: 0);
+}
+
+// desaturate ($color, $amount) (warna di hilangkan)
+.satu {
+  color: desaturate($color: $warna-dasar, $amount: 50%);
+}
+
+// grayscale ($color)
+.satu {
+  color: grayscale($color: $warna-dasar);
+}
+
+// mix(color1, color2, $weight: %)
+.dua {
+  color: mix($warna-dasar,blue, 0.5);
+}
+
+// fade-in($color, $amount) (penambahan opacity)
+.tiga {
+  color: fade-in(rgba(250,128,114,.2),.5);
+}
+
+// fade-out($color, $amount)
+.tiga {
+  color: fade-out($color: $warna-dasar, $amount: .5);
+}
